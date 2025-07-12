@@ -57,6 +57,7 @@ fn HomePage() -> impl IntoView {
     view! {
         <h1>"Triple Atom webapp"</h1>
         <button on:click=on_click>"Click Me: " {count}</button>
+        <h2> "\n" </h2>
         <button on:click=dec> "Don't click: " {count} </button>
     }
 }
