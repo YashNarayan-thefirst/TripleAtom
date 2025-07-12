@@ -34,7 +34,7 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="leptos" href="/pkg/triple-atom.css"/>
 
         // sets the document title
-        <Title text="Welcome to Leptos"/>
+        <Title text="Triple Atom"/>
 
         // content for this welcome page
         <Router>
@@ -53,9 +53,10 @@ fn HomePage() -> impl IntoView {
     // Creates a reactive value to update the button
     let count = RwSignal::new(0);
     let on_click = move |_| *count.write() += 1;
-
+    let dec = move |_| *count.write() -=1;
     view! {
-        <h1>"Welcome to Leptos!"</h1>
+        <h1>"Triple Atom webapp"</h1>
         <button on:click=on_click>"Click Me: " {count}</button>
+        <button on:click=dec> "Don't click: " {count} </button>
     }
 }
